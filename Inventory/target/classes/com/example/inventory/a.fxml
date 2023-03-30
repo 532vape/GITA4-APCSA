@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.5066889632107023" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventory.MainController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="36.0" layoutY="12.0" prefHeight="375.0" prefWidth="149.0">
+               <children>
+                  <AnchorPane prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="23.0" text="Tool Name" />
+                        <TextField fx:id="txtName" layoutX="80.0" layoutY="19.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="104.0" prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="23.0" text="Price" />
+                        <TextField fx:id="txtCost" layoutX="80.0" layoutY="19.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="248.0" prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="23.0" text="Quantity" />
+                        <TextField fx:id="txtQuantity" layoutX="80.0" layoutY="19.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="292.0" prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="23.0" text="Satisfaction" />
+                        <TextField fx:id="txtSatisfaction" layoutX="80.0" layoutY="19.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="317.0" prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="23.0" text="Quality" />
+                        <TextField fx:id="txtQuality" layoutX="80.0" layoutY="19.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="310.0" prefHeight="88.0" prefWidth="67.0">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="7.0" prefHeight="100.0" prefWidth="216.0">
+                           <children>
+                              <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#onBtnAddClick" text="Enter">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnDisplay" mnemonicParsing="false" onAction="#onBtnDisplayClick" text="Display">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                            <Button fx:id="btnCheckReview" mnemonicParsing="false" onAction="#checkReviews" text="Check Reviews" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <TextArea fx:id="output" prefHeight="200.0" prefWidth="200.0" />
+  </items>
+</SplitPane>

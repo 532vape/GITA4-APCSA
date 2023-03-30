@@ -3,13 +3,13 @@ package com.example.inventory;
 import java.util.ArrayList;
 
 public class Inventory {
-    private ArrayList<Product> products;
+    private ArrayList<qualityControl> products;
     private int max;
     public Inventory(){
-        products = new ArrayList<Product>();
+        products = new ArrayList<qualityControl>();
     }
-    public void addNewProduct(String name, double cost, int amount){
-        Product product = new Product(name, cost, amount);
+    public void addNewProduct(String name, double cost, int amount, int satisfaction, int quality){
+        qualityControl product = new qualityControl(name, cost, amount, satisfaction, quality);
         products.add(product);
         sort(products);
     }
@@ -22,11 +22,21 @@ public class Inventory {
         }
         return output;
     }
-    public ArrayList<Product> displayProducts(){
+    public ArrayList<qualityControl> displayProducts(){
         return products;
     }
-    public static void sort(ArrayList<Product> list){
+    public static void sort(ArrayList<qualityControl> list){
         list.sort((o1, o2) -> o1.getItem().compareTo(o2.getItem()));
+    }
+
+    public ArrayList<String> poorReviews(){
+        ArrayList<String> output = new ArrayList<String>();
+        for (qualityControl item : products){
+            if(item.getSatis() < 5 || item.getQual() < 5){
+                output.add(item.getItem()); //naming is all ducked up
+            }
+        }
+        return output;
     }
 
 }
